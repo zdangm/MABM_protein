@@ -1,7 +1,7 @@
 #------------------------------get expression file---------------------------------------
 
 library('data.table')
-library(BEDMatrix)
+library('BEDMatrix')
 library('org.Hs.eg.db')
 library('stringr')
 
@@ -34,4 +34,4 @@ sample_list<-data.frame(str_split_fixed(sample,'_',n=2)[,1],str_split_fixed(samp
 write.table(sample_list,"~/MABM/generate_db_and_cov/sample_list.txt",row.names=F,col.names=F,quote=F)
 
 ##------------------------------------plink-------------------------------------------------
-plink --bfile ~/olink_all_sample/prune/QC_ins0_all_pruned_0.8_snp --keep ~/MABM/generate_db_and_cov/sample_list.txt --make-bed --out ~/MABM/generate_db_and_cov/eas_QC_ins0_all_pruned_0.8_snp
+#plink --bfile ~/olink_all_sample/prune/QC_ins0_all_pruned_0.8_snp --keep ~/MABM/generate_db_and_cov/sample_list.txt --make-bed --out ~/MABM/generate_db_and_cov/eas_QC_ins0_all_pruned_0.8_snp
